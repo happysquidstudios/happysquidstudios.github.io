@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team — Happy Squid Studios</title>
+<meta name="description" content="Meet the squids behind Happy Squid Studios.">
+<link rel="icon" href="../assets/logo-icon-64.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<!-- NAV -->
+<header class="nav" id="top">
+  <div class="nav-links-wrap">
+    <nav class="nav-links nav-links-left">
+      <a href="../index.html#about">Studio</a>
+      <a href="../index.html#sweet-deceit">Sweet Deceit</a>
+    </nav>
+    <nav class="nav-links nav-links-right">
+      <a href="../index.html#team">Team</a>
+      <a href="https://discord.gg/FsbeFsMgct" target="_blank" rel="noopener" class="nav-cta">Discord</a>
+    </nav>
+  </div>
+  <a href="../index.html#top" class="nav-brand">
+    <img src="../assets/icon-white-64.png" alt="Happy Squid Studios — home" class="nav-logo">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main class="profile-page">
+  <div class="section-inner profile-inner">
+    <a href="../index.html#team" class="profile-back">&larr; Back to the tank</a>
+
+    <div id="profile-content" class="profile-content">
+      <!-- populated by script -->
+    </div>
+
+    <nav class="profile-pagenav" id="profile-pagenav">
+      <!-- populated by script -->
+    </nav>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <img src="../assets/icon-white-64.png" alt="Happy Squid Studios logo">
+      <span>Happy Squid Studios</span>
+    </div>
+    <p class="footer-tag">Small tentacles, big ideas.</p>
+    <p class="footer-copy">© 2026 Happy Squid Studios. Made with too much caffeine and too many tentacles.</p>
+  </div>
+</footer>
+
+<script src="../team-data.js"></script>
+<script src="../script.js"></script>
+<script>
+(function () {
+  const SOCIAL_LABELS = {
+    discord: "Discord",
+    twitter: "X / Twitter",
+    linkedin: "LinkedIn",
+    instagram: "Instagram",
+    artstation: "ArtStation",
+    behance: "Behance",
+    youtube: "YouTube",
+    twitch: "Twitch",
+    bluesky: "Bluesky",
+    github: "GitHub",
+    soundcloud: "SoundCloud",
+    bandcamp: "Bandcamp",
+    itch: "itch.io",
+    website: "Website",
+    email: "Email"
+  };
+
+  /* Unknown keys still render nicely instead of showing the raw lowercase key */
+  const prettyLabel = key => key.charAt(0).toUpperCase() + key.slice(1);
+
+  // photo paths in team-data.js are written relative to the site root,
+  // and this page lives one folder down
+  const photoSrc = path => /^(https?:)?\//.test(path) ? path : '../' + path;
+
+  const params = new URLSearchParams(window.location.search);
+  const slug = params.get('p');
+  const person = slug ? TEAM_DATA[slug] : null;
+  const content = document.getElementById('profile-content');
+  const pagenav = document.getElementById('profile-pagenav');
+
+  if (!person) {
+    content.innerHTML = `
+      <div class="profile-missing">
+        <h1>Squid not found</h1>
+        <p class="lead">We couldn't find that profile. They might still be settling into the tank.</p>
+        <a href="../index.html#team" class="btn btn-primary">Back to the team</a>
+      </div>`;
+    pagenav.style.display = 'none';
+    document.title = "Team — Happy Squid Studios";
+    return;
+  }
+
+  document.title = person.name + " — Happy Squid Studios";
+
+  const socialsHtml = Object.keys(person.socials || {})
+    .filter(key => person.socials[key])
+    .map(key => {
+      const url = person.socials[key];
+      const label = SOCIAL_LABELS[key] || prettyLabel(key);
+      const href = key === 'email' && url.indexOf('@') > -1 && url.indexOf('mailto:') !== 0
+        ? 'mailto:' + url
+        : url;
+      return `<a href="${href}" target="_blank" rel="noopener" class="social-pill">${label}</a>`;
+    }).join('');
+
+  const bioHtml = (person.bio || []).map(p => `<p>${p}</p>`).join('');
+
+  content.innerHTML = `
+    <div class="profile-grid">
+      <div class="profile-photo">
+        ${person.photo
+          ? `<div class="profile-portrait"><img src="${photoSrc(person.photo)}" alt="${person.name}"></div>`
+          : `<div class="avatar avatar-xl" style="--a:${person.colorA};--b:${person.colorB};">${person.initials}</div>`}
+      </div>
+      <div class="profile-details">
+        <h1>${person.name}</h1>
+        <p class="profile-role">${person.role}</p>
+        <blockquote class="profile-quote">${person.quote}</blockquote>
+        <div class="profile-bio">${bioHtml}</div>
+        <div class="profile-socials">
+          <p class="profile-socials-label">Find them</p>
+          <div class="profile-socials-list">
+            ${socialsHtml || '<span class="social-pill social-pill-empty">Socials coming soon</span>'}
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  const idx = TEAM_ORDER.indexOf(slug);
+  const prevSlug = idx > 0 ? TEAM_ORDER[idx - 1] : null;
+  const nextSlug = idx > -1 && idx < TEAM_ORDER.length - 1 ? TEAM_ORDER[idx + 1] : null;
+
+  pagenav.innerHTML = `
+    <a href="${prevSlug ? 'profile.html?p=' + prevSlug : '#'}" class="pagenav-link ${prevSlug ? '' : 'pagenav-disabled'}">
+      ${prevSlug ? '&larr; ' + TEAM_DATA[prevSlug].name : ''}
+    </a>
+    <a href="../index.html#team" class="pagenav-link pagenav-all">All squids</a>
+    <a href="${nextSlug ? 'profile.html?p=' + nextSlug : '#'}" class="pagenav-link ${nextSlug ? '' : 'pagenav-disabled'}">
+      ${nextSlug ? TEAM_DATA[nextSlug].name + ' &rarr;' : ''}
+    </a>
+  `;
+})();
+</script>
+</body>
+</html>
