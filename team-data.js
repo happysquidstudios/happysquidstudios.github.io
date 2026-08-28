@@ -78,11 +78,7 @@ const TEAM_DATA = {
     photoPos: "50% 18%",
     quote: "Add a short, fun quote from Darren here.",
     bio: [
-      "Darren has been programming in the games industry for over 14 years and counting!"
-      "Darren Started out at Hippo Entertainment where they worked with several industry veterans on Wings! Remastered."
-      "In mobile games they were involved in the initial and ongoing development of several massive titles at Ace Viral."
-      "Over at Behaviour Interactive their currently announced titles include Tinykin, The Bookwalker, Star Wars Monopoly."
-      "Outside of programming he enjoys traveling and photography and recently bought a motorcycle."
+      "Bio coming soon — edit team-data.js to add Darren's story."
     ],
     socials: {"linkedin": "https://www.linkedin.com/in/darren-scott-742a0344/"
 
@@ -98,13 +94,10 @@ const TEAM_DATA = {
     colorB: "#2FBFA4",
     photo: "assets/team/arron-mcnab.jpg",
     photoPos: "50% 18%",
-    quote: "Passion is the key to great art.",
+    quote: "Add a short, fun quote from Arron here.",
     bio: [
-      "Arron is a creative generalist whose lifelong obsession with gaming naturally led him to Teesside University, where he honed his skills in visual production, sound engineering, and music production.",
-      "After collaborating on multiple group projects during his studies—including one with founder Martin Wilkinson—Arron joined the Happy Squid Studios team. He now focuses heavily on music composition, sound engineering, and collaborative musical mixing and production alongside Owen Jones.",
-      "Outside of the studio, Arron is a massive music enjoyer, an avid reader, and a long-time Chess fan. He is always ready to spend hours discussing the artistic vision and storytelling of his favourite games, ranging from the Devil May Cry, Soulsborne, and Persona franchises to recent titles like Clair Obscur: Expedition 33."
-    ]
-}
+      "Bio coming soon — edit team-data.js to add Arron's story."
+    ],
     socials: {"linkedin": "https://uk.linkedin.com/in/arron-mcnab"
 
     }
@@ -117,13 +110,10 @@ const TEAM_DATA = {
     initials: "R",
     colorA: "#FFB199",
     colorB: "#FF5C7A",
-    quote: "Probably doting on my cat, starting a new craft project, or obsessing over game soundtracks.",
+    quote: "Add a short, fun quote from Ren here.",
     bio: [
-      "Ren is a 3D Artist with a genuine passion for bringing worlds to life. With four years of games industry experience, she began her career at Hunted Cow Games, working on notable titles like Godzilla x Kong: Titan Chasers, Star Vortex, and the newly announced Fallen Sword 2.",
-      "Specialising in environments, props, and technical art, Ren finds it a dream come true to build the immersive assets and worlds that players experience. Her fascination with virtual spaces began at a young age, inspired early on by games like Ty the Tasmanian Tiger—a title that unknowingly sparked her entire career path.",
-      "When she isn't building new worlds or gaming, she's likely listening to game soundtracks or watching streams. Outside of the digital space, Ren loves spending time with loved ones, doting on her cat like a proud mother, and constantly picking up (and quickly abandoning) new crafty hobbies."
-    ]
-}
+      "Bio coming soon — edit team-data.js to add Ren's story."
+    ],
     socials: {"linkedin": "https://linkedin.com",
     "portfolio": "https://loz1999.wixsite.com/renspeirs"
   }
