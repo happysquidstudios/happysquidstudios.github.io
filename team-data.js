@@ -78,7 +78,7 @@ const TEAM_DATA = {
     photoPos: "50% 18%",
     quote: "Add a short, fun quote from Darren here.",
     bio: [
-      "Bio  soon — edit team-data.js to add Darren's story."
+      "Darren has been programming in the games industry for over 14 years! Starting out soon — edit team-data.js to add Darren's story."
     ],
     socials: {"linkedin": "https://www.linkedin.com/in/darren-scott-742a0344/"
 
