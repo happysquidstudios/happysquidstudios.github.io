@@ -76,17 +76,18 @@ const TEAM_DATA = {
     colorB: "#8E9C9A",
     photo: "assets/team/darren-scott.jpg",
     photoPos: "50% 18%",
-    quote: "Add a short, fun quote from Darren here.",
+    quote: "Two wheels, one camera, and fourteen years of clean code.",
     bio: [
-      "Darren has been programming in the games industry for over 14 years! Starting out at Hippo Entertainment where they worked with serveral industry veterans on Wings! Remastered."
-      "In mobile games they were involved in the initial and ongoing development of several titles at Ace Viral."
-      "Over at Behaviour Interactive ive worked on their currently announced titles that include Tinykin, The Bookwalker, Star Wars Monopoly."
-      "Outside of programming he enjoys traveling and photography and recently bought a motorcyle."
+      "Darren has been programming in the games industry for over 14 years! He started out at Hippo Entertainment, where he worked alongside several industry veterans on Wings! Remastered.",
+      "In the mobile games space, he was heavily involved in the initial and ongoing development of multiple titles over at Ace Viral.",
+      "During his time at Behaviour Interactive, he worked on a variety of fantastic titles including Tinykin, The Bookwalker, and Star Wars Monopoly.",
+      "Outside of programming, Darren is an avid traveler and photographer, and has recently taken to the open road on his new motorcycle."
     ],
-    socials: {"linkedin": "https://www.linkedin.com/in/darren-scott-742a0344/"
-
+    socials: {
+      "linkedin": "https://www.linkedin.com/in/darren-scott-742a0344/"
     }
-  },
+}
+
 
   "arron-mcnab": {
     name: "Arron Mcnab",
