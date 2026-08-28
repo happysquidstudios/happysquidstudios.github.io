@@ -79,10 +79,14 @@ const TEAM_DATA = {
     photoPos: "50% 18%",
     quote: "Two wheels, one camera, and fourteen years of clean code.",
     bio: [
+<<<<<<< HEAD
       "Darren has been programming in the games industry for over 14 years! He started out at Hippo Entertainment, where he worked alongside several industry veterans on Wings! Remastered.",
       "In the mobile games space, he was heavily involved in the initial and ongoing development of multiple titles over at Ace Viral.",
       "During his time at Behaviour Interactive, he worked on a variety of fantastic titles including Tinykin, The Bookwalker, and Star Wars Monopoly.",
       "Outside of programming, Darren is an avid traveler and photographer, and has recently taken to the open road on his new motorcycle."
+=======
+      "Bio coming soon — edit team-data.js to add Darren's story."
+>>>>>>> parent of 98b9c26 (martin)
     ],
     socials: {
       "linkedin": "https://linkedin.com"
