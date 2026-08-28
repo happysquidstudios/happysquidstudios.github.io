@@ -67,7 +67,7 @@ const TEAM_DATA = {
   }
   },
 
-  "darren-scott": {
+ "darren-scott": {
     name: "Darren Scott",
     role: "Programmer",
     group: "core",
@@ -84,9 +84,10 @@ const TEAM_DATA = {
       "Outside of programming, Darren is an avid traveler and photographer, and has recently taken to the open road on his new motorcycle."
     ],
     socials: {
-      "linkedin": "https://www.linkedin.com/in/darren-scott-742a0344/"
+      "linkedin": "https://linkedin.com"
     }
 }
+
 
 
   "arron-mcnab": {
