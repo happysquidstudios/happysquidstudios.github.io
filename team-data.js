@@ -78,7 +78,7 @@ const TEAM_DATA = {
     photoPos: "50% 18%",
     quote: "Add a short, fun quote from Darren here.",
     bio: [
-      "Bio coming soon — edit team-data.js to add Darren's story."
+      "Bio  soon — edit team-data.js to add Darren's story."
     ],
     socials: {"linkedin": "https://www.linkedin.com/in/darren-scott-742a0344/"
 
