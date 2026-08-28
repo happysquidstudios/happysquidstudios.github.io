@@ -78,7 +78,10 @@ const TEAM_DATA = {
     photoPos: "50% 18%",
     quote: "Add a short, fun quote from Darren here.",
     bio: [
-      "Darren has been programming in the games industry for over 14 years! Starting out soon — edit team-data.js to add Darren's story."
+      "Darren has been programming in the games industry for over 14 years! Starting out at Hippo Entertainment where they worked with serveral industry veterans on Wings! Remastered."
+      "In mobile games they were involved in the initial and ongoing development of several titles at Ace Viral."
+      "Over at Behaviour Interactive ive worked on their currently announced titles that include Tinykin, The Bookwalker, Star Wars Monopoly."
+      "Outside of programming he enjoys traveling and photography and recently bought a motorcyle."
     ],
     socials: {"linkedin": "https://www.linkedin.com/in/darren-scott-742a0344/"
 
