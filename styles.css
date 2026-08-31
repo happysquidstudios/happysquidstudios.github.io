@@ -196,7 +196,7 @@ ul{margin:0;padding:0;list-style:none;}
 .game p{max-width:56ch;}
 
 .game-art-card{
-  position:relative;aspect-ratio:4/5;border-radius:28px;overflow:hidden;
+  position:relative;aspect-ratio:16/9;border-radius:28px;overflow:hidden;
   background:linear-gradient(155deg,#2C0510 0%, #1a2b27 55%, var(--ink-2) 100%);
   border:1px solid rgba(255,92,122,.25);
   display:flex;align-items:flex-end;justify-content:flex-start;padding:22px;
