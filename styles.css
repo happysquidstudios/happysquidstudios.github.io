@@ -173,11 +173,21 @@ ul{margin:0;padding:0;list-style:none;}
 .about-stats{display:flex;flex-direction:column;gap:18px;}
 .about-actions{margin-top:8px;}
 .stat-card{
-  background:var(--ink-3);border:1px solid rgba(244,244,239,.08);
-  border-radius:20px;padding:26px 28px;
+  position:relative;background:var(--ink-3);border:1px solid rgba(244,244,239,.08);
+  border-radius:22px 6px 20px 6px;padding:26px 28px 26px 32px;
+  border-left:3px solid var(--teal);
+  overflow:hidden;
 }
-.stat-num{display:block;font-family:var(--font-display);font-size:2.6rem;font-weight:800;color:var(--teal-bright);line-height:1;}
-.stat-label{display:block;margin-top:8px;font-size:.9rem;color:var(--muted);}
+.stat-card::before{
+  content:"";position:absolute;top:-30%;right:-15%;width:120px;height:120px;
+  background:radial-gradient(circle, rgba(111,238,208,.14), transparent 70%);
+  pointer-events:none;
+}
+.stat-card:nth-child(2){border-radius:6px 22px 6px 20px;border-left-color:var(--candy);}
+.stat-card:nth-child(2)::before{background:radial-gradient(circle, rgba(255,92,122,.14), transparent 70%);}
+.stat-card:nth-child(2) .stat-num{color:var(--candy-2);}
+.stat-num{position:relative;display:block;font-family:var(--font-display);font-size:2.6rem;font-weight:800;color:var(--teal-bright);line-height:1;}
+.stat-label{position:relative;display:block;margin-top:8px;font-size:.9rem;color:var(--muted);}
 
 /* ===== Sweet Deceit / game ===== */
 .game{background:var(--ink);padding:64px 0 100px;}
