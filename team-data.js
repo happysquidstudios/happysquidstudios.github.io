@@ -41,30 +41,30 @@ const TEAM_DATA = {
       "Happy Squid is ultimately about creating games I'm proud of, with a team I love working alongside, and hopefully making a few worlds that people will be happy to get lost in."
     ],
     socials: {
-      linkedin: "https://linkedin.com",
-      instagram: "https://instagram.com",
-      artstation: "https://artstation.com" 
+      linkedin: "https://www.linkedin.com/in/martin-wilkinson-/",
+      instagram: "https://www.instagram.com/th3finalgamer/",
+      artstation: "https://www.artstation.com/martinwilkinson"
     }
   },
 
   "brad-beals": {
-    "name": "Brad Beals",
-    "role": "Co-Founder - Programmer",
-    "group": "core",
-    "initials": "B",
-    "colorA": "#FF5C7A",
-    "colorB": "#FFB199",
-    "photo": "assets/team/brad-beals.jpg",
-    "photoPos: "50% 15%",
-    "quote": "Amaze! Amaze! Amaze!",
-    "bio": [
+    name: "Brad Beals",
+    role: "Co-Founder - Programmer",
+    group: "core",
+    initials: "B",
+    colorA: "#FF5C7A",
+    colorB: "#FFB199",
+    photo: "assets/team/brad-beals.jpg",
+    photoPos: "50% 15%",
+    quote: "Amaze! Amaze! Amaze!",
+    bio: [
       "Co-Founder Brad is a programmer with a lifelong love for games, sparked the moment he got his hands on a GameCube as a kid. That early spark carried him through his studies at Teesside University, where he honed his craft in games programming.",
       "He got his start at SockMonkey Studios, working on titles like Cocomelon: Play with JJ and Prison Architect, before moving to Behaviour Interactive on Silent Hill: Ascension after they acquired SockMonkey. From there he joined Luminous Interactive, diving into virtual reality development.",
       "Now at Happy Squid, Brad works on gameplay elements, manages version control, and steers the ship on the programming side, while also lending a hand in game design.",
       "Outside of development, Brad is a devoted fan of Zelda, Pikmin, Souls, and Resident Evil, and can talk endlessly about all things Westeros. A self-confessed film addict with over 1,200 movies watched and counting, his all-time favourites are Project Hail Mary, The Thing, Mission: Impossible – Fallout, and Blade Runner 2049, a regular at the gym, and never misses a good music festival."
     ],
-    "socials": {
-      "linkedin": "https://linkedin.com"
+    socials: {
+      linkedin: "https://www.linkedin.com/in/bradpatrickbeals/"
     }
   },
 
@@ -79,17 +79,13 @@ const TEAM_DATA = {
     photoPos: "50% 18%",
     quote: "Two wheels, one camera, and fourteen years of clean code.",
     bio: [
-<<<<<<< HEAD
       "Darren has been programming in the games industry for over 14 years! He started out at Hippo Entertainment, where he worked alongside several industry veterans on Wings! Remastered.",
       "In the mobile games space, he was heavily involved in the initial and ongoing development of multiple titles over at Ace Viral.",
       "During his time at Behaviour Interactive, he worked on a variety of fantastic titles including Tinykin, The Bookwalker, and Star Wars Monopoly.",
       "Outside of programming, Darren is an avid traveler and photographer, and has recently taken to the open road on his new motorcycle."
-=======
-      "Bio coming soon — edit team-data.js to add Darren's story."
->>>>>>> parent of 98b9c26 (martin)
     ],
     socials: {
-      "linkedin": "https://linkedin.com"
+      linkedin: "https://www.linkedin.com/in/darren-scott-742a0344/"
     }
   },
 
@@ -109,7 +105,7 @@ const TEAM_DATA = {
       "Outside of the studio, Arron is a massive music enjoyer, an avid reader, and a long-time Chess fan. He is always ready to spend hours discussing the artistic vision and storytelling of his favourite games, ranging from the Devil May Cry, Soulsborne, and Persona franchises to recent titles like Clair Obscur: Expedition 33."
     ],
     socials: {
-      "linkedin": "https://linkedin.com"
+      linkedin: "https://uk.linkedin.com/in/arron-mcnab"
     }
   },
 
@@ -127,8 +123,8 @@ const TEAM_DATA = {
       "When she isn't building new worlds or gaming, she's likely listening to game soundtracks or watching streams. Outside of the digital space, Ren loves spending time with loved ones, doting on her cat like a proud mother, and constantly picking up (and quickly abandoning) new crafty hobbies."
     ],
     socials: {
-      "linkedin": "https://linkedin.com",
-      "portfolio": "https://wixsite.com"
+      linkedin: "https://linkedin.com",
+      portfolio: "https://loz1999.wixsite.com/renspeirs"
     }
   },
 
@@ -203,3 +199,50 @@ const TEAM_DATA = {
     photoPos: "50% 10%",
     quote: "This programmer is powered by curiosity, caffeine, and far too many Warhammer models.",
     bio: [
+      "Neil is a programmer with a lifelong love for games and the stories behind them. He started out selling games, talking to players and discovering what made different worlds stick. That passion pulled him into QA, where he moved from selling games to testing them—learning how they worked from the inside and seeing the craft behind every system.",
+      "Wanting to build games rather than just break them, Neil went to university to study game development to turn that curiosity into code. Now he focuses on writing clean, simple code and building systems that support storytelling, world‑building, and player experience.",
+      "Outside of development, Neil enjoys DnD, Mass Effect, Shenmue, audiobooks, movies, and painting Warhammer—hobbies that keep him inspired and connected to the universes that shaped his love for games."
+    ],
+    socials: {}
+  },
+
+  "guy-naylor": {
+    name: "Guy Naylor",
+    role: "3D Artist",
+    group: "pool",
+    initials: "GN",
+    colorA: "#FFB199",
+    colorB: "#FF5C7A",
+    quote: "Add a short, fun quote from Guy here.",
+    bio: [
+      "Bio coming soon — edit team-data.js to add Guy's story."
+    ],
+    socials: {}
+  },
+
+  "owen-jones": {
+    name: "Owen Jones",
+    role: "Audio",
+    group: "core",
+    initials: "OJ",
+    colorA: "#8E9C9A",
+    colorB: "#2FBFA4",
+    photo: "assets/team/owen-jones.jpg",
+    photoPos: "50% 15%",
+    quote: "Add a short, fun quote from Owen here.",
+    bio: [
+      "Bio coming soon — edit team-data.js to add Owen's story.",
+      "Moved from the Ink Pool into the tank full-time — update this bio to reflect that."
+    ],
+    socials: {}
+  }
+
+};
+
+/* Order controls prev/next navigation on each profile page */
+const TEAM_ORDER = [
+  "martin-wilkinson", "brad-beals", "darren-scott",
+  "arron-mcnab", "ren-speirs", "ben-canwell", "owen-jones",
+  "hardy-lee", "setonji-hotonu", "juan-esteban-garcia",
+  "neil", "guy-naylor"
+];
