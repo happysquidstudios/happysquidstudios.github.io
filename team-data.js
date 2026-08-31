@@ -98,7 +98,7 @@ const TEAM_DATA = {
     colorB: "#2FBFA4",
     photo: "assets/team/arron-mcnab.jpg",
     photoPos: "50% 18%",
-    quote: "Probably thinking about Chess, Soulsborne lore, or the perfect audio mix.",
+    quote: "Passion is the key to great art.",
     bio: [
       "Arron is a creative generalist whose lifelong obsession with gaming naturally led him to Teesside University, where he honed his skills in visual production, sound engineering, and music production.",
       "After collaborating on multiple group projects during his studies—including one with founder Martin Wilkinson—Arron joined the Happy Squid Studios team. He now focuses heavily on music composition, sound engineering, and collaborative musical mixing and production alongside Owen Jones.",
@@ -116,14 +116,16 @@ const TEAM_DATA = {
     initials: "R",
     colorA: "#FFB199",
     colorB: "#FF5C7A",
-    quote: "Probably doting on my cat, starting a new craft project, or obsessing over game soundtracks.",
+    photo: "assets/team/ren-speirs.jpg",
+    photoPos: "50% 10%",
+    quote: "If there's a will, there's a way.",
     bio: [
       "Ren is a 3D Artist with a genuine passion for bringing worlds to life. With four years of games industry experience, she began her career at Hunted Cow Games, working on notable titles like Godzilla x Kong: Titan Chasers, Star Vortex, and the newly announced Fallen Sword 2.",
       "Specialising in environments, props, and technical art, Ren finds it a dream come true to build the immersive assets and worlds that players experience. Her fascination with virtual spaces began at a young age, inspired early on by games like Ty the Tasmanian Tiger—a title that unknowingly sparked her entire career path.",
       "When she isn't building new worlds or gaming, she's likely listening to game soundtracks or watching streams. Outside of the digital space, Ren loves spending time with loved ones, doting on her cat like a proud mother, and constantly picking up (and quickly abandoning) new crafty hobbies."
     ],
     socials: {
-      linkedin: "https://linkedin.com",
+      linkedin: "https://www.linkedin.com/in/ren-speirs-8a5716154/",
       portfolio: "https://loz1999.wixsite.com/renspeirs"
     }
   },
@@ -137,9 +139,9 @@ const TEAM_DATA = {
     colorB: "#2FBFA4",
     photo: "assets/team/ben-canwell.jpg",
     photoPos: "50% 20%",
-    quote: "Add a short, fun quote from Ben here.",
+    quote: "I make the UI.",
     bio: [
-      "Bio coming soon — edit team-data.js to add Ben's story."
+      "From Middlesbrough College to Teesside University and my year at Double Eleven, I have built my UI/UX skills up to make the best player experience that I would want from the games I play."
     ],
     socials: {}
   },
@@ -169,9 +171,13 @@ const TEAM_DATA = {
     photoPos: "50% 20%",
     quote: "Add a short, fun quote from Setonji here.",
     bio: [
-      "Bio coming soon — edit team-data.js to add Setonji's story."
+      "Set is a 3D Artist and Animator with a multidisciplinary background in fine art, graphic design, animation, and game development. His creative journey began at Northumbria University, where he completed both his undergraduate and postgraduate studies before transitioning into gaming.",
+      "His first professional role in industry was at Gamesole, a studio based in his home country of Nigeria. A defining milestone in his career came with his contribution to Cities: Skylines – Africa in Miniature, the African themed expansion of the popular city building simulation game. He now frequently lends Happy Squid a hand with character modelling and rigging.",
+      "Outside of work, Set enjoys real time strategy, survival, and simulation games like StarCraft, SimCity, Manor Lords, Final Fantasy Tactics, and Minecraft. He is also an enthusiastic Pokémon and classic Yu-Gi-Oh! fan. When he's not gaming, he trains regularly at his local Jiu Jitsu club and indulges his love of East Asian cuisine, especially ramen. He also enjoys binge watching period dramas, and anything created by Vince Gilligan."
     ],
-    socials: {}
+    socials: {
+      linkedin: "https://www.linkedin.com/in/setonji-hotonu/"
+    }
   },
 
   "juan-esteban-garcia": {
@@ -181,11 +187,14 @@ const TEAM_DATA = {
     initials: "JG",
     colorA: "#2FBFA4",
     colorB: "#8E9C9A",
-    quote: "Add a short, fun quote from Juan here.",
+    quote: "Esos son Reebok? O son Nike?",
     bio: [
-      "Bio coming soon — edit team-data.js to add Juan's story."
+      "Hello troops, I'm Juanes and I'm the animator for the main character. I love games and my favourite series is Avatar The Last Airbender! Check out my website that includes my personal projects and feel free to connect with me on LinkedIn for a blether."
     ],
-    socials: {}
+    socials: {
+      website: "https://juanesgarci.wixsite.com/characteranimator",
+      linkedin: "https://www.linkedin.com/in/juan-esteban-garcia-63219917b/?skipRedirect=true"
+    }
   },
 
   "neil": {
