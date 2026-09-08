@@ -59,7 +59,7 @@ const TEAM_DATA = {
     quote: "Amaze! Amaze! Amaze!",
     bio: [
       "Co-Founder Brad is a programmer with a lifelong love for games, sparked the moment he got his hands on a GameCube as a kid. That early spark carried him through his studies at Teesside University, where he honed his craft in games programming.",
-      "He got his start at SockMonkey Studios, working on titles like Cocomelon: Play with JJ and Prison Architect, before moving to Behaviour Interactive on Silent Hill: Ascension after they acquired SockMonkey. From there he joined Luminous Interactive, diving into virtual reality development.",
+      "He got his start at SockMonkey Studios, working on titles like Cocomelon: Play with JJ and Prison Architect, before moving to Behaviour Interactive on Silent Hill: Ascension after they acquired SockMonkey. From there he joined Luminous Interactive, diving into virtual reality development on the newly announced Exterminauts.",
       "Now at Happy Squid, Brad works on gameplay elements, manages version control, and steers the ship on the programming side, while also lending a hand in game design.",
       "Outside of development, Brad is a devoted fan of Zelda, Pikmin, Souls, and Resident Evil, and can talk endlessly about all things Westeros. A self-confessed film addict with over 1,200 movies watched and counting, his all-time favourites are Project Hail Mary, The Thing, Mission: Impossible – Fallout, and Blade Runner 2049, a regular at the gym, and never misses a good music festival."
     ],
@@ -125,8 +125,7 @@ const TEAM_DATA = {
       "When she isn't building new worlds or gaming, she's likely listening to game soundtracks or watching streams. Outside of the digital space, Ren loves spending time with loved ones, doting on her cat like a proud mother, and constantly picking up (and quickly abandoning) new crafty hobbies."
     ],
     socials: {
-      linkedin: "https://www.linkedin.com/in/ren-speirs-8a5716154/",
-      portfolio: "https://loz1999.wixsite.com/renspeirs"
+      linkedin: "https://www.linkedin.com/in/ren-speirs-8a5716154/"
     }
   },
 
@@ -187,6 +186,8 @@ const TEAM_DATA = {
     initials: "JG",
     colorA: "#2FBFA4",
     colorB: "#8E9C9A",
+    photo: "assets/team/juan-esteban-garcia.jpg",
+    photoPos: "50% 15%",
     quote: "Esos son Reebok? O son Nike?",
     bio: [
       "Hello troops, I'm Juanes and I'm the animator for the main character. I love games and my favourite series is Avatar The Last Airbender! Check out my website that includes my personal projects and feel free to connect with me on LinkedIn for a blether."
