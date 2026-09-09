@@ -59,7 +59,7 @@ const TEAM_DATA = {
     quote: "Amaze! Amaze! Amaze!",
     bio: [
       "Co-Founder Brad is a programmer with a lifelong love for games, sparked the moment he got his hands on a GameCube as a kid. That early spark carried him through his studies at Teesside University, where he honed his craft in games programming.",
-      "He got his start at SockMonkey Studios, working on titles like Cocomelon: Play with JJ and Prison Architect, before moving to Behaviour Interactive on Silent Hill: Ascension after they acquired SockMonkey. From there he joined Luminous Interactive, diving into virtual reality development on the newly announced Exterminauts.",
+      "He got his start at SockMonkey Studios, working on titles like Cocomelon: Play with JJ and Prison Architect, before moving to Behaviour Interactive on Silent Hill: Ascension after they acquired SockMonkey. From there he joined Luminous Interactive, diving into virtual reality development.",
       "Now at Happy Squid, Brad works on gameplay elements, manages version control, and steers the ship on the programming side, while also lending a hand in game design.",
       "Outside of development, Brad is a devoted fan of Zelda, Pikmin, Souls, and Resident Evil, and can talk endlessly about all things Westeros. A self-confessed film addict with over 1,200 movies watched and counting, his all-time favourites are Project Hail Mary, The Thing, Mission: Impossible – Fallout, and Blade Runner 2049, a regular at the gym, and never misses a good music festival."
     ],
@@ -132,7 +132,8 @@ const TEAM_DATA = {
   "ben-canwell": {
     name: "Ben Canwell",
     role: "UI / UX",
-    group: "core",
+    group: "pool",
+    former: true,
     initials: "B",
     colorA: "#8E9C9A",
     colorB: "#2FBFA4",
@@ -201,7 +202,7 @@ const TEAM_DATA = {
   "neil": {
     name: "Neil Maven",
     role: "Programmer",
-    group: "pool",
+    group: "core",
     initials: "NM",
     colorA: "#6FEED0",
     colorB: "#2FBFA4",
@@ -254,7 +255,7 @@ const TEAM_DATA = {
 /* Order controls prev/next navigation on each profile page */
 const TEAM_ORDER = [
   "martin-wilkinson", "brad-beals", "darren-scott",
-  "arron-mcnab", "ren-speirs", "ben-canwell", "owen-jones",
+  "arron-mcnab", "ren-speirs", "owen-jones", "neil",
   "hardy-lee", "setonji-hotonu", "juan-esteban-garcia",
-  "neil", "guy-naylor"
+  "guy-naylor", "ben-canwell"
 ];

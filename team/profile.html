@@ -132,7 +132,7 @@
       </div>
       <div class="profile-details">
         <h1>${person.name}</h1>
-        <p class="profile-role">${person.role}</p>
+        <p class="profile-role">${person.role}${person.former ? ' <span class="profile-badge-former">Former</span>' : ''}</p>
         <blockquote class="profile-quote">${person.quote}</blockquote>
         <div class="profile-bio">${bioHtml}</div>
         <div class="profile-socials">

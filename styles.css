@@ -328,6 +328,14 @@ ul{margin:0;padding:0;list-style:none;}
 .pool-card-open{border-style:dashed;opacity:.7;}
 .pool-card-open .pool-name{color:var(--muted);}
 
+.pool-badge{
+  margin-left:auto;flex-shrink:0;
+  font-family:var(--font-mono);font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--muted);border:1px solid rgba(244,244,239,.16);
+  padding:3px 9px;border-radius:999px;
+}
+.pool-card-former .pool-dot{background:var(--muted);}
+
 /* ===== Join ===== */
 .ocean-depths{position:relative;}
 .join{background:var(--ink);padding:110px 0;text-align:center;position:relative;}
@@ -410,6 +418,12 @@ a.team-card, a.pool-card{display:block;}
 .profile-role{
   font-family:var(--font-mono);font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;
   color:var(--muted);margin-bottom:22px;
+}
+.profile-badge-former{
+  display:inline-block;margin-left:8px;
+  font-size:.7rem;letter-spacing:.05em;color:var(--muted);
+  border:1px solid rgba(244,244,239,.16);padding:2px 9px;border-radius:999px;
+  vertical-align:middle;
 }
 .profile-quote{
   margin:0 0 26px;padding-left:18px;border-left:3px solid var(--teal);
