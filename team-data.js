@@ -26,7 +26,7 @@ const TEAM_DATA = {
 
   "martin-wilkinson": {
     name: "Martin Wilkinson",
-    role: "Founder · Artist",
+    role: "Founder · Creative Director",
     group: "core",
     initials: "MW",
     colorA: "#2FBFA4",
@@ -213,7 +213,9 @@ const TEAM_DATA = {
       "Wanting to build games rather than just break them, Neil went to university to study game development to turn that curiosity into code. Now he focuses on writing clean, simple code and building systems that support storytelling, world‑building, and player experience.",
       "Outside of development, Neil enjoys DnD, Mass Effect, Shenmue, audiobooks, movies, and painting Warhammer—hobbies that keep him inspired and connected to the universes that shaped his love for games."
     ],
-    socials: {}
+    socials: {
+      linkedin: "https://www.linkedin.com/in/neil-maven/"
+    }
   },
 
   "guy-naylor": {
