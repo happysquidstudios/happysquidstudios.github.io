@@ -329,11 +329,13 @@ ul{margin:0;padding:0;list-style:none;}
 .pool-card-open .pool-name{color:var(--muted);}
 
 .pool-badge{
+  display:inline-flex;align-items:center;gap:6px;
   margin-left:auto;flex-shrink:0;
   font-family:var(--font-mono);font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;
-  color:var(--muted);border:1px solid rgba(244,244,239,.16);
-  padding:3px 9px;border-radius:999px;
+  color:var(--muted);background:var(--ink-2);border:1px solid rgba(244,244,239,.16);
+  padding:5px 11px 5px 9px;border-radius:999px;
 }
+.pool-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--candy);flex-shrink:0;}
 .pool-card-former .pool-dot{background:var(--muted);}
 
 /* ===== Join ===== */
@@ -420,9 +422,9 @@ a.team-card, a.pool-card{display:block;}
   color:var(--muted);margin-bottom:22px;
 }
 .profile-badge-former{
-  display:inline-block;margin-left:8px;
-  font-size:.7rem;letter-spacing:.05em;color:var(--muted);
-  border:1px solid rgba(244,244,239,.16);padding:2px 9px;border-radius:999px;
+  display:inline-flex;align-items:center;gap:6px;margin-left:8px;
+  font-size:.7rem;letter-spacing:.05em;color:var(--muted);background:var(--ink-2);
+  border:1px solid rgba(244,244,239,.16);padding:4px 10px 4px 8px;border-radius:999px;
   vertical-align:middle;
 }
 .profile-quote{
