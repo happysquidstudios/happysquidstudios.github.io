@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="dark">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team — Happy Squid Studios</title>
+<meta name="description" content="The people behind Happy Squid Studios and Sweet Deceit.">
+<link rel="icon" href="assets/logo-icon-64.png?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* ================= TEAM PAGE (mock) — Sabotage-style grid, name + role only ================= */
+:root{--ease-out:cubic-bezier(.23,1,.32,1);}
+body{background:var(--ink);}
+:focus-visible{outline:2px solid var(--teal-bright);outline-offset:3px;}
+.tm-page{padding:150px 0 120px;}
+.tm-title{margin:0 0 14px;font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:.5px;
+  font-size:clamp(2.6rem,6vw,4.8rem);line-height:.95;color:var(--cream);}
+.tm-box{display:inline-block;background:var(--teal-bright);color:#06110F;padding:.02em .18em 0;line-height:.96;}
+.tm-intro{margin:0 0 56px;max-width:46ch;color:rgba(244,244,239,.72);font-size:1.05rem;}
+.tm-label{display:flex;align-items:baseline;gap:14px;margin:0 0 20px;padding-bottom:14px;border-bottom:1px solid rgba(244,244,239,.1);
+  font-family:var(--font-display);font-weight:800;font-size:1.5rem;text-transform:uppercase;letter-spacing:.5px;color:var(--cream);}
+.tm-label small{font-family:var(--font-body);font-weight:600;font-size:.9rem;text-transform:none;letter-spacing:0;color:var(--muted);}
+.tm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin:0 0 90px;}
+
+.tm-card{position:relative;display:block;aspect-ratio:2/3;overflow:hidden;background:#060809;container-type:inline-size;isolation:isolate;}
+.tm-photo{position:absolute;inset:0;}
+.tm-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.15) brightness(.8);transform:scale(1.02);
+  transition:transform .7s var(--ease-out),filter .6s ease;}
+.tm-photo::before{content:"";position:absolute;inset:0;z-index:1;background:#0B1418;mix-blend-mode:lighten;transition:opacity .6s ease;}
+.tm-photo::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(6,8,9,.35) 0%,transparent 18%,transparent 42%,rgba(6,8,9,.8) 70%,rgba(6,8,9,.97) 100%);}
+.tm-nophoto{display:flex;align-items:center;justify-content:center;background:#0C1114;}
+.tm-nophoto span{font-family:var(--font-display);font-weight:800;font-size:28cqw;color:rgba(244,244,239,.07);margin-top:-30%;}
+.tm-text{position:absolute;left:22px;right:16px;bottom:22px;z-index:3;}
+.tm-card h3{margin:0;font-family:var(--font-display);text-transform:uppercase;line-height:.92;letter-spacing:.3px;color:var(--cream);}
+.tm-first{display:block;font-weight:500;font-size:min(1.9rem,13cqw);}
+.tm-last{display:block;font-weight:800;font-size:min(2.1rem,14.5cqw);}
+.tm-role{position:relative;margin:16px 0 0;padding-top:14px;font-weight:700;font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(244,244,239,.62);}
+.tm-role::before{content:"";position:absolute;top:0;left:0;width:18px;height:1px;background:var(--teal-bright);opacity:.7;}
+.tm-open{box-shadow:inset 0 0 0 1px rgba(111,238,208,.35);}
+.tm-plus{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);font-family:var(--font-display);font-weight:500;font-size:4.5rem;line-height:1;
+  color:rgba(244,244,239,.25);transition:color .3s ease,transform .5s var(--ease-out);}
+.tm-open .tm-first,.tm-open .tm-last{color:rgba(244,244,239,.55);transition:color .3s ease;}
+.tm-card:focus-visible .tm-photo img{filter:grayscale(0) contrast(1.04) brightness(.95);}
+@media (hover:hover) and (pointer:fine){
+  .tm-card:hover .tm-photo img{filter:grayscale(0) contrast(1.04) brightness(.95);transform:scale(1.06) translateY(-6px);}
+  .tm-card:hover .tm-photo::before{opacity:0;}
+  .tm-open:hover .tm-plus{color:var(--teal-bright);transform:translate(-50%,-50%) rotate(90deg);}
+  .tm-open:hover .tm-first,.tm-open:hover .tm-last{color:var(--cream);}
+}
+
+/* --- past credits: a solid band sliced in at an angle, full width --- */
+.tm-credits{position:relative;overflow:hidden;margin:30px 0 110px;padding:150px 0 140px;background:var(--teal);color:#06110F;
+  clip-path:polygon(0 70px,100% 0,100% calc(100% - 70px),0 100%);}
+.tm-credits-h{margin:0 0 12px;font-family:var(--font-display);font-weight:800;text-transform:uppercase;letter-spacing:.5px;
+  font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:.95;color:#06110F;}
+.tm-credits-intro{margin:0 0 34px;max-width:52ch;font-size:1.08rem;font-weight:600;color:rgba(6,17,15,.78);}
+.tm-credit-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;column-gap:.55em;row-gap:.15em;max-width:30em;
+  font-family:var(--font-display);font-weight:800;font-size:clamp(1.4rem,3vw,2.5rem);line-height:1.1;}
+/* each title gets its own size + slight tilt, like a scrapbook wall — still one readable list */
+.tm-credit-list li{display:inline-block;}
+.tm-credit-list span{display:inline-block;font-size:calc(var(--s) * 1em);transform:rotate(var(--r));transition:transform .3s var(--ease-out),color .2s ease;}
+.tc-i{color:#06110F;}
+.tc-c{color:var(--cream);}
+.tc-o{color:rgba(6,17,15,.5);}
+@media (hover:hover) and (pointer:fine){.tm-credit-list span:hover{transform:rotate(0) scale(1.06);}}
+/* faint wall of titles behind, tilted */
+.tm-credits-bg{position:absolute;inset:-20% -10%;transform:rotate(-6deg);pointer-events:none;overflow:hidden;
+  font-family:var(--font-display);font-weight:800;font-size:2.2rem;line-height:1.25;color:#06110F;opacity:.1;white-space:nowrap;}
+.tm-credits-bg p{margin:0;}
+.tm-credits-bg p:nth-child(even){margin-left:-12em;}
+.tm-credits .section-inner{position:relative;}
+.tm-credits-note{margin:30px 0 0;font-size:.88rem;font-weight:600;color:rgba(6,17,15,.65);}
+@media (max-width:700px){.tm-credits{padding:100px 0 96px;clip-path:polygon(0 40px,100% 0,100% calc(100% - 40px),0 100%);}}
+.m-footer{padding:0 0 30px;font-size:.88rem;color:var(--muted);}
+.m-footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(244,244,239,.08);padding-top:22px;}
+.m-footer-brand{display:flex;align-items:center;gap:10px;color:rgba(244,244,239,.8);}
+.m-footer-brand img{height:20px;width:auto;}
+@media (max-width:980px){.tm-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:700px){.tm-grid{grid-template-columns:repeat(2,1fr);gap:10px;}.tm-text{left:14px;right:10px;bottom:14px;}.tm-role{font-size:.62rem;margin-top:10px;padding-top:10px;}.tm-page{padding-top:120px;}}
+@media (prefers-reduced-motion:reduce){.tm-photo img,.tm-plus{transition-property:filter,color;}.tm-card:hover .tm-photo img{transform:scale(1.02);}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<header class="nav" id="top">
+  <div class="nav-links-wrap">
+    <nav class="nav-links nav-links-left">
+      <a href="index.html#about">Studio</a>
+      <a href="index.html#sweet-deceit">Sweet Deceit</a>
+    </nav>
+    <nav class="nav-links nav-links-right">
+      <a href="team.html">Team</a>
+      <a href="https://discord.gg/FsbeFsMgct" target="_blank" rel="noopener" class="nav-cta">Discord</a>
+    </nav>
+  </div>
+  <a href="index.html" class="nav-brand">
+    <img src="assets/icon-white-64.png" alt="Happy Squid Studios — home" class="nav-logo">
+  </a>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<main class="tm-page">
+  <div class="section-inner">
+    <h1 class="tm-title">The <span class="tm-box">whole</span> team</h1>
+    <p class="tm-intro">A small core team in Middlesbrough, and a pool of freelance friends who help us make it happen.</p>
+
+    <h2 class="tm-label">Core team <small>6 people</small></h2>
+    <div class="tm-grid">
+      <a class="tm-card" href="team/profile.html?p=martin-wilkinson">
+        <div class="tm-photo"><img src="assets/team/martin-wilkinson.jpg" alt="" loading="lazy" style="object-position:50% 8%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Martin</span><span class="tm-last">Wilkinson</span></h3>
+          <p class="tm-role">Founder · Creative Director</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=brad-beals">
+        <div class="tm-photo"><img src="assets/team/brad-beals.jpg" alt="" loading="lazy" style="object-position:50% 15%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Brad</span><span class="tm-last">Beals</span></h3>
+          <p class="tm-role">Co-founder · Programmer</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=darren-scott">
+        <div class="tm-photo"><img src="assets/team/darren-scott.jpg" alt="" loading="lazy" style="object-position:50% 18%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Darren</span><span class="tm-last">Scott</span></h3>
+          <p class="tm-role">Programmer</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=ren-speirs">
+        <div class="tm-photo"><img src="assets/team/ren-speirs.jpg" alt="" loading="lazy" style="object-position:50% 10%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Ren</span><span class="tm-last">Speirs</span></h3>
+          <p class="tm-role">Environment Artist</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=neil">
+        <div class="tm-photo"><img src="assets/team/neil.jpg" alt="" loading="lazy" style="object-position:50% 10%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Neil</span><span class="tm-last">Maven</span></h3>
+          <p class="tm-role">Programmer</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=owen-jones">
+        <div class="tm-photo"><img src="assets/team/owen-jones.jpg" alt="" loading="lazy" style="object-position:50% 15%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Owen</span><span class="tm-last">Jones</span></h3>
+          <p class="tm-role">Audio</p>
+        </div>
+      </a>
+      <a class="tm-card tm-open" href="join-us.html">
+        <div class="tm-plus" aria-hidden="true">+</div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Could</span><span class="tm-last">be you</span></h3>
+          <p class="tm-role">We're hiring</p>
+        </div>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- PAST CREDITS: individual credits, clearly not Happy Squid games -->
+  <section class="tm-credits" aria-labelledby="credits-h">
+    <div class="tm-credits-bg" aria-hidden="true"><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p><p>Silent Hill: Ascension · The Bookwalker · Star Wars: Monopoly · Rust · Rust · Rust · Silent Hill: Ascension · Angry Gran Run · Star Wars: Monopoly · Silent Hill: Ascension · Prison Architect 2 · Prison Architect · Exterminauts · CoComelon · The Bookwalker · Exterminauts · Minecraft Dungeons 2 · Wings! Remastered · Angry Gran Run · Exterminauts · Prison Architect · Godzilla x Kong: Titan Chasers · Tinykin · The Bookwalker · Fallen Sword 2 · CoComelon · Cities: Skylines · Prison Architect 2 · Godzilla x Kong: Titan Chasers · Minecraft Dungeons 2 · Fallen Sword 2 · CoComelon · Prison Architect 2 · Cities: Skylines · Star Wars: Monopoly · Wings! Remastered · Fallen Sword 2 · Tinykin · Wings! Remastered · Godzilla x Kong: Titan Chasers · Cities: Skylines · Tinykin · Prison Architect · Minecraft Dungeons 2 · Angry Gran Run</p></div>
+    <div class="section-inner">
+      <h2 class="tm-credits-h" id="credits-h">Where we've been</h2>
+      <p class="tm-credits-intro">Before Happy Squid, people on our team worked on these games at other studios and in other roles.</p>
+      <ul class="tm-credit-list"><li><span class="tc-c" style="--s:1.25;--r:-3deg">Silent Hill: Ascension</span></li><li><span class="tc-i" style="--s:0.85;--r:2deg">Prison Architect</span></li><li><span class="tc-i" style="--s:1.0;--r:-1deg">Minecraft Dungeons 2</span></li><li><span class="tc-o" style="--s:0.8;--r:3deg">Cities: Skylines</span></li><li><span class="tc-i" style="--s:1.05;--r:-2deg">Star Wars: Monopoly</span></li><li><span class="tc-c" style="--s:0.9;--r:1.5deg">Godzilla x Kong: Titan Chasers</span></li><li><span class="tc-i" style="--s:1.3;--r:-4deg">Tinykin</span></li><li><span class="tc-o" style="--s:0.85;--r:2.5deg">The Bookwalker</span></li><li><span class="tc-c" style="--s:1.4;--r:-2deg">Rust</span></li><li><span class="tc-i" style="--s:0.8;--r:-1deg">Prison Architect 2</span></li><li><span class="tc-i" style="--s:0.95;--r:3deg">Fallen Sword 2</span></li><li><span class="tc-o" style="--s:0.85;--r:-2.5deg">Wings! Remastered</span></li><li><span class="tc-i" style="--s:1.1;--r:2deg">CoComelon</span></li><li><span class="tc-c" style="--s:0.9;--r:-3deg">Angry Gran Run</span></li><li><span class="tc-i" style="--s:1.15;--r:1deg">Exterminauts</span></li></ul>
+      <p class="tm-credits-note">Individual credits from previous jobs. These aren't Happy Squid projects.</p>
+    </div>
+  </section>
+
+  <div class="section-inner">
+    <h2 class="tm-label">The ink pool <small>Freelance friends</small></h2>
+    <div class="tm-grid">
+      <a class="tm-card" href="team/profile.html?p=arron-mcnab">
+        <div class="tm-photo"><img src="assets/team/arron-mcnab.jpg" alt="" loading="lazy" style="object-position:50% 18%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Arron</span><span class="tm-last">Mcnab</span></h3>
+          <p class="tm-role">Audio</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=hardy-lee">
+        <div class="tm-photo tm-nophoto"><span>HL</span></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Hardy</span><span class="tm-last">Lee</span></h3>
+          <p class="tm-role">Character Artist & Animator</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=setonji-hotonu">
+        <div class="tm-photo"><img src="assets/team/setonji-hotonu.jpg" alt="" loading="lazy" style="object-position:50% 20%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Setonji</span><span class="tm-last">Hotonu</span></h3>
+          <p class="tm-role">Character Artist & Animator</p>
+        </div>
+      </a>
+      <a class="tm-card" href="team/profile.html?p=juan-esteban-garcia">
+        <div class="tm-photo"><img src="assets/team/juan-esteban-garcia.jpg" alt="" loading="lazy" style="object-position:50% 15%"></div>
+        <div class="tm-text">
+          <h3><span class="tm-first">Juan Esteban</span><span class="tm-last">Garcia</span></h3>
+          <p class="tm-role">Character Animator</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</main>
+
+<footer class="m-footer">
+  <div class="section-inner m-footer-inner">
+    <span class="m-footer-brand">© 2026 Happy Squid Studios Ltd. All rights reserved.</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  if(!window.gsap || !window.ScrollTrigger) return;
+  gsap.registerPlugin(ScrollTrigger);
+  var mm = gsap.matchMedia();
+  mm.add({full:'(prefers-reduced-motion: no-preference)', mouse:'(hover: hover) and (pointer: fine)'}, function(ctx){
+    var c = ctx.conditions;
+    if(c.full){
+      gsap.from(['.tm-title','.tm-intro'], {opacity:0, y:20, duration:.9, ease:'expo.out', stagger:.08});
+      gsap.from(['.tm-credits-h','.tm-credits-intro'], {opacity:0, y:20, duration:.9, ease:'expo.out', stagger:.08,
+        scrollTrigger:{trigger:'.tm-credits', start:'top 80%', once:true}});
+      gsap.from('.tm-credit-list li', {opacity:0, y:18, scale:.9, duration:.8, ease:'expo.out', stagger:.035,
+        scrollTrigger:{trigger:'.tm-credit-list', start:'top 85%', once:true}});
+      // each grid's cards come in left to right as it scrolls into view
+      document.querySelectorAll('.tm-grid').forEach(function(grid){
+        gsap.from(grid.children, {opacity:0, y:32, duration:.9, ease:'expo.out', stagger:.06,
+          scrollTrigger:{trigger:grid, start:'top 88%', once:true}});
+      });
+    }
+  });
+})();
+</script>
+</body>
+</html>

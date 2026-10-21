@@ -92,7 +92,7 @@ const TEAM_DATA = {
   "arron-mcnab": {
     name: "Arron Mcnab",
     role: "Audio",
-    group: "core",
+    group: "pool",
     initials: "A",
     colorA: "#6FEED0",
     colorB: "#2FBFA4",
@@ -129,22 +129,6 @@ const TEAM_DATA = {
     }
   },
 
-  "ben-canwell": {
-    name: "Ben Canwell",
-    role: "UI / UX",
-    group: "pool",
-    former: true,
-    initials: "B",
-    colorA: "#8E9C9A",
-    colorB: "#2FBFA4",
-    photo: "assets/team/ben-canwell.jpg",
-    photoPos: "50% 20%",
-    quote: "I make the UI.",
-    bio: [
-      "From Middlesbrough College to Teesside University and my year at Double Eleven, I have built my UI/UX skills up to make the best player experience that I would want from the games I play."
-    ],
-    socials: {}
-  },
 
   "hardy-lee": {
     name: "Hardy Lee",
@@ -219,19 +203,6 @@ const TEAM_DATA = {
     }
   },
 
-  "guy-naylor": {
-    name: "Guy Naylor",
-    role: "3D Artist",
-    group: "pool",
-    initials: "GN",
-    colorA: "#FFB199",
-    colorB: "#FF5C7A",
-    quote: "Add a short, fun quote from Guy here.",
-    bio: [
-      "Bio coming soon — edit team-data.js to add Guy's story."
-    ],
-    socials: {}
-  },
 
   "owen-jones": {
     name: "Owen Jones",
