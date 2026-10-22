@@ -137,6 +137,8 @@ const TEAM_DATA = {
     initials: "HL",
     colorA: "#2FBFA4",
     colorB: "#6FEED0",
+    photo: "assets/team/hardy-lee.jpg",
+    photoPos: "50% 12%",
     quote: "Add a short, fun quote from Hardy here.",
     bio: [
       "Bio coming soon — edit team-data.js to add Hardy's story."
